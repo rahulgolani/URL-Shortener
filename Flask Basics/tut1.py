@@ -15,6 +15,10 @@ def hello():
     name="Rahul Golani"
     return render_template('index.html',name=name)
 
+@app.route('/bootstrap')
+def bootstrap():
+    return render_template('bootstrap.html')
+
 # to run the app
 app.run(debug=True)
 # debug= True automatically reloads the page on the changes

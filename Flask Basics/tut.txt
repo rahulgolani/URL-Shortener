@@ -10,4 +10,8 @@ templates folder - private
 
 rendering template using html page (instead of hardcoding return values)
 
-jinja templating(defining variables in python code and accessing it in the html template)
+jinja templating(defining variables in python code and accessing it in the html template using {{var name}})
+
+-----------------3------------
+
+adding Bootstrap 
