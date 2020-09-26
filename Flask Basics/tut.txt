@@ -1,7 +1,7 @@
--------------------1-------------------------
+-------------------2-------------------------
 creating a minimal flask application
 
--------------------2-------------------------
+-------------------3-------------------------
 STATIC AND TEMPLATE FOLDER
 
 flask app is organized as ->
@@ -12,6 +12,15 @@ rendering template using html page (instead of hardcoding return values)
 
 jinja templating(defining variables in python code and accessing it in the html template using {{var name}})
 
------------------3------------
+-----------------4------------
 
-adding Bootstrap 
+adding Bootstrap
+
+from getbootstrap from starter templates
+
+-----------------5-----------
+
+Jinja Templating->
+
+{{url_for('static',filename='file.png')}}
+//to access the files from the static folder
