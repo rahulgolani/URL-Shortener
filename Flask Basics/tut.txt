@@ -1,0 +1,13 @@
+-------------------1-------------------------
+creating a minimal flask application
+
+-------------------2-------------------------
+STATIC AND TEMPLATE FOLDER
+
+flask app is organized as ->
+static folder- public
+templates folder - private
+
+rendering template using html page (instead of hardcoding return values)
+
+jinja templating(defining variables in python code and accessing it in the html template)
