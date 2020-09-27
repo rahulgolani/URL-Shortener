@@ -43,3 +43,15 @@ Template inheritance using jinja
 Template Inheritance
 
 layout.html
+
+{% extends "layout.html" %}
+{% block body %}
+  <ul>
+  {% for user in users %}
+    <li><a href="{{ user.url }}">{{ user.username }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
+
+
+fixed all the pages for inheritance, defined end point for post page 
