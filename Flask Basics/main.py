@@ -1,5 +1,7 @@
 from flask import Flask,render_template,request
 # request for working with post requests
+from flask_mail import Mail
+from flask_mail import Message
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
@@ -10,13 +12,20 @@ with open('config.json','r') as c:
 local_server=params["local_server"]
 
 app=Flask(__name__)
-
+app.config.update(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT='465',
+    MAIL_USE_SSL='True',
+    MAIL_USERNAME=params["gmail-username"],
+    MAIL_PASSWORD=params["gmail-password"]
+)
 if local_server:
     app.config['SQLALCHEMY_DATABASE_URI'] = params["local_uri"]
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = params["production_uri"]
 
 db = SQLAlchemy(app)
+mail = Mail(app)
 
 class Contact(db.Model):
     # sno,name, email,phone,message,date
@@ -49,6 +58,11 @@ def contact():
         entry=Contact(name=name,email=email,phone=phone,date=date,message=message)
         db.session.add(entry)
         db.session.commit()
+        msg = Message('New Communication from '+email,
+                  sender=email,
+                  recipients=[params["gmail-username"]],
+                  body=message)
+        mail.send(msg)
 
     return render_template('contact.html',params=params)
 

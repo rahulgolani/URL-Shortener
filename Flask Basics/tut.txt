@@ -102,3 +102,9 @@ import json in main and open config.json
 can make facebook, twitter and github urls configurable as well
 target=_blank
 make sure to enclose property name of config in double quotes while calling as well
+
+---------------------11--------------------------------
+
+sending the emails using flask
+pip install flask-mail
+app.config.update(to update the configurations)
