@@ -24,3 +24,22 @@ Jinja Templating->
 
 {{url_for('static',filename='file.png')}}
 //to access the files from the static folder
+
+---------------6-------------
+
+
+static and template folder setup
+
+main.py -- blog app
+defined endpoints for about and contact
+
+fixed bootstrap loading issue using {{url_for}}
+fixed end points in anchor tag
+
+Template inheritance using jinja
+
+------------------7-----------------------
+
+Template Inheritance
+
+layout.html
