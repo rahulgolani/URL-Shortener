@@ -66,3 +66,28 @@ xampp - localhost/phpmyadmin/
 ---------------------9-----------------------------------------------
 
 connecting flask with database using flask sqlalchemy
+
+flask sqlalchemy is an orm
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/myblog' [important]
+db = SQLAlchemy(app)
+
+define class for a table to map the records
+to store the contacts we will make a post request to a page which will store all the values in the table
+
+to fetch the entry use name=request.form.get('name')
+import request from the flask module
+use ,methods=['GET','POST'] in the app.route to work with post request
+
+now adding entries
+entry=Contact(entries)
+db.session.add(entry)
+db.session.commit()
+
+use action and method
+
+error no module named MySQLdb
+from unofficial python binaries install wheel for mysqlclient
+install it from downloads folder
+
+fix the date error using datetime
