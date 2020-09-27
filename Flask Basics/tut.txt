@@ -54,4 +54,15 @@ layout.html
 {% endblock %}
 
 
-fixed all the pages for inheritance, defined end point for post page 
+fixed all the pages for inheritance, defined end point for post page
+
+---------------------8--------------------------
+
+creating a database database
+xampp - localhost/phpmyadmin/
+
+2 tables -> posts and contact
+
+---------------------9-----------------------------------------------
+
+connecting flask with database using flask sqlalchemy
