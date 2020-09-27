@@ -91,3 +91,14 @@ from unofficial python binaries install wheel for mysqlclient
 install it from downloads folder
 
 fix the date error using datetime
+
+-----------------------10---------------------------
+
+making paramaters configurable
+
+config.json and define parameters in there
+import json in main and open config.json
+
+can make facebook, twitter and github urls configurable as well
+target=_blank
+make sure to enclose property name of config in double quotes while calling as well

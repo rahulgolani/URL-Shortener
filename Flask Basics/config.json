@@ -1,0 +1,10 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri":"mysql://root:@localhost/myblog",
+    "production_uri":"mysql://root:@localhost/myblog",
+    "github_url":"http://github.com/rahulgolani",
+    "blog_name":"My Blog"
+  }
+}
