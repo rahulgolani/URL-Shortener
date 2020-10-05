@@ -108,3 +108,24 @@ make sure to enclose property name of config in double quotes while calling as w
 sending the emails using flask
 pip install flask-mail
 app.config.update(to update the configurations)
+
+---------------------12---------------------------------
+
+altered table for post, included slug
+endpoint post, <string:post_slug>, this also needs to be passed in the function [syntax]
+
+query the table by Posts.query.filter_by(slug=post_slug).first()
+first is used so that if multiple posts are thehre qith same slug so first of them will be returned
+
+getting data from database using the parameter post like post.content or post.title
+
+will make a uploader for the images
+
+made image_file column in database table post
+using {{post.img_file}} but encoding error for braces
+
+to fix this we will create a jinja variable within a jinja block [{% jinja block %}]
+
+now we can use this variable in filename
+
+made about text configurable
