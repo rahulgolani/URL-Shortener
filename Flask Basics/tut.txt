@@ -129,3 +129,14 @@ to fix this we will create a jinja variable within a jinja block [{% jinja block
 now we can use this variable in filename
 
 made about text configurable
+
+
+------------------------13--------------------------------------
+Designing homepage, deciding number of posts visible on the homepage and when user clicks on any post he should get redirected to the particular page
+
+
+used for loop of jinja, queried the table and passed the posts parameter to index.html
+
+adding tagline to replace subtitle
+
+restricted the number of posts to 3 to display on the page
