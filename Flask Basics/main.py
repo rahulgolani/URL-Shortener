@@ -84,4 +84,12 @@ def post(post_slug):
     return render_template('post.html',params=params,post=post)
 
 
+@app.route('/login', methods=['GET','POST'])
+def login():
+    if request.method=='POST':
+        # redirect to admin panel
+        pass
+    else:
+        return render_template('login.html',params=params)
+
 app.run(debug=True)

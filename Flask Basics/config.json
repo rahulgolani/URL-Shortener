@@ -9,6 +9,8 @@
     "gmail-username":"#",
     "gmail-password":"#",
     "about-text":"My name is Rahul Golani",
-    "no-of-posts":3
+    "no-of-posts":3,
+    "admin_username":"rahulgolani",
+    "admin_password":"rahulgolani"
   }
 }

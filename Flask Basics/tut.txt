@@ -115,7 +115,7 @@ altered table for post, included slug
 endpoint post, <string:post_slug>, this also needs to be passed in the function [syntax]
 
 query the table by Posts.query.filter_by(slug=post_slug).first()
-first is used so that if multiple posts are thehre qith same slug so first of them will be returned
+first is used so that if multiple posts are there with same slug so first of them will be returned
 
 getting data from database using the parameter post like post.content or post.title
 
@@ -140,3 +140,10 @@ used for loop of jinja, queried the table and passed the posts parameter to inde
 adding tagline to replace subtitle
 
 restricted the number of posts to 3 to display on the page
+
+----------------------14---------------
+Admin dashboard
+
+example bootstrap for signin page
+
+used cdn bootstrap and navbar same as that of the Homepage
