@@ -147,3 +147,20 @@ Admin dashboard
 example bootstrap for signin page
 
 used cdn bootstrap and navbar same as that of the Homepage
+
+-------------------------15-----------------------------------
+
+edit, delete and file upload
+
+user authentication for login-> can get the username and password from request.form.get
+
+creating sessions
+
+managed login
+to set the session variable in flask just import the session module from flask
+session['username']=username
+now if the user is already logged in then no need to display the login page again
+
+just check if the user is present in the session
+
+created a table to show all the details of posts in dashboard

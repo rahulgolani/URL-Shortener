@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, session, redirect, url_for
 # request for working with post requests
 from flask_mail import Mail
 from flask_mail import Message
@@ -12,6 +12,7 @@ with open('config.json','r') as c:
 local_server=params["local_server"]
 
 app=Flask(__name__)
+app.secret_key = '123456789'
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT='465',
@@ -84,12 +85,29 @@ def post(post_slug):
     return render_template('post.html',params=params,post=post)
 
 
+@app.route('/dashboard')
+def dashboard():
+    posts=Posts.query.all()
+    if 'username' in session and session['username']==params['admin_username']:
+        return render_template('dashboard.html',params=params,posts=posts)
+    return render_template('login.html',params=params)
+
 @app.route('/login', methods=['GET','POST'])
 def login():
+    posts=Posts.query.all()
+
+    if 'username' in session and session['username']==params['admin_username']:
+        # return redirect(url_for('dashboard',params=params,posts=posts))
+        return render_template('dashboard.html',params=params,posts=posts)
+
     if request.method=='POST':
         # redirect to admin panel
-        pass
-    else:
-        return render_template('login.html',params=params)
+        username=request.form.get('uname');
+        userpass=request.form.get('upass');
+        if (username==params['admin_username'] and userpass==params['admin_password']):
+            session['username']=username# this user is logged in
+            # return redirect(url_for('dashboard',params=params,posts=posts))
+            return render_template('dashboard.html',params=params,posts=posts)
+    return render_template('login.html',params=params)
 
 app.run(debug=True)
