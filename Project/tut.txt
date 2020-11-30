@@ -1,0 +1,19 @@
+redirect() is used to redirect the user to a specific location
+url_for() is used to build a url to a specific function
+url_for() accepts the name of the function as the first argument and then any number of keyword arguments
+
+
+SAVING THE DATA TO A JSON FILE
+
+json is a data interchanging format
+
+
+MESSAGE FLASHING
+
+flash function from flask
+
+{% for message in get_flashed_messages() %}
+<h2>{{message}}</h2>
+{% endfor %}
+
+set secret_key in main.py

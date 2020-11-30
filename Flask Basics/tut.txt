@@ -164,3 +164,8 @@ now if the user is already logged in then no need to display the login page agai
 just check if the user is present in the session
 
 created a table to show all the details of posts in dashboard
+
+another way to run the app without using app.run(debug=True)
+set FLASK_APP=main.py
+python filename.py
+set FLASK_ENV=development
