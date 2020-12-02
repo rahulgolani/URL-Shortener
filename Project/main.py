@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request, redirect, url_for, flash,  abort, session
+from flask import Flask, render_template,request, redirect, url_for, flash,  abort, session, jsonify
 import json
 import os.path
 
@@ -58,8 +58,8 @@ def redirectToUrl(code):
 def page_not_found(error):
     return render_template("page_not_found.html"),404
 
-
-
-
+@app.route('/api')
+def previous_codes():
+    return jsonify(list(session.keys()))
 
 app.run(debug=True)

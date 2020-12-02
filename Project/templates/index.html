@@ -48,14 +48,15 @@
     <br><br>
     {% if codes %}
     <h2>Codes you have created</h2>
-    <ul>
+    <!-- <ul>
       {% for code in codes%}
       <a href="{{url_for('redirectToUrl',code=code)}}">
         <li>{{code}}</li>
       </a>
       {% endfor %}
-    </ul>
-    {% endif %}
+    </ul> -->
+    <a href="{{url_for('previous_codes')}}" target="_blank">Previous Codes
+      {% endif %}
 
 
   </div>
