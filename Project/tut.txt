@@ -17,3 +17,23 @@ flash function from flask
 {% endfor %}
 
 set secret_key in main.py
+
+
+CREATING ROUTES FOR URL SHORT NAMES
+
+new route just as post slug
+
+DISPLAY CUSTOM ERROR MESSAGES
+
+to handle error 404 we can use abort function from flask
+
+return abort(404)
+
+
+
+now we get flask defined error whenever we go to the slug not defined in the json file
+we can create a error handler in flask as a new route
+#for which error you want to create a handler
+@app.errorhandler(404)
+def page_not_found(error):
+return render_template("page_not_found.html"),404

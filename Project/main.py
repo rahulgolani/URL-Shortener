@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request, redirect, url_for, flash
+from flask import Flask, render_template,request, redirect, url_for, flash,  abort
 import json
 import os.path
 
@@ -38,6 +38,25 @@ def yourUrl():
 
         # instead of returning some text we can redirect the user to the homepage
         return redirect(url_for('index'))
+
+@app.route('/<string:code>')
+def redirectToUrl(code):
+    if os.path.exists("url_file.json"):
+        with open("url_file.json") as file:
+            urls=json.load(file)
+            if code in urls.keys():
+                if 'url' in urls[code].keys():
+                    return redirect(urls[code]['url'])
+
+    return abort(404)
+
+#for which error you want to create a handler
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("page_not_found.html"),404
+
+
+
 
 
 app.run(debug=True)
