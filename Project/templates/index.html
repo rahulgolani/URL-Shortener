@@ -43,6 +43,21 @@
       </div> -->
       <button type="submit" class="btn btn-primary">Shorten</button>
     </form>
+
+
+    <br><br>
+    {% if codes %}
+    <h2>Codes you have created</h2>
+    <ul>
+      {% for code in codes%}
+      <a href="{{url_for('redirectToUrl',code=code)}}">
+        <li>{{code}}</li>
+      </a>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+
   </div>
 
   <!-- Optional JavaScript; choose one of the two! -->

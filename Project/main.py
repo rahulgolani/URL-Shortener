@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request, redirect, url_for, flash,  abort
+from flask import Flask, render_template,request, redirect, url_for, flash,  abort, session
 import json
 import os.path
 
@@ -7,7 +7,7 @@ app.secret_key="hello"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', codes=session.keys())
 
 @app.route('/about')
 def about():
@@ -24,12 +24,15 @@ def yourUrl():
                 urls=json.load(file)
 
         if code in urls:
-            flash("This short name has already been taken. Please use another one!")
-            return redirect(url_for('index'))
+            # flash("This short name has already been taken. Please use another one!")
+            # return redirect(url_for('index'))
+            session[request.form.get('code')]=True
+            return render_template('yourUrl.html',code=code)
 
         urls[code]={"url":request.form.get('url')}
         with open("url_file.json",'w') as file:
             json.dump(urls,file)
+            session[request.form.get('code')]=True
 
         return render_template('yourUrl.html',code=code)
     else:

@@ -37,3 +37,15 @@ we can create a error handler in flask as a new route
 @app.errorhandler(404)
 def page_not_found(error):
 return render_template("page_not_found.html"),404
+
+IMPLEMENTING SESSIONS AND COOKIES
+
+to retain the information which the user has entered in the pasts
+
+* A session is the time interval when a client logs into a server and logs out of it
+* A session with each client is assigned a session Id
+* To use a session we must use a secret key
+* The session object in flask is used to set the session and get the session data
+* The data of the session is stored in the client browser as a cookie
+* Cookie is a text file of a client session stored on a browser
+* Its purpose is to remember and track the data pertaining to client's usage
